@@ -30,7 +30,7 @@ const config = {
   ],
   author: "Vedansh Avlani",
   email: "vedansh.avlani@gmail.com",
-  site: "https://nareshkhatri.site",
+  site: "https://portfolio-website-two-pied-86.vercel.app/",
 
   get ogImg() {
     return this.site + "/assets/seo/Portfolio 1.png";
