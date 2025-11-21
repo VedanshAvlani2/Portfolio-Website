@@ -89,7 +89,7 @@ const CONTACT_LINKS = [
   },
 ];
 
-export const TOOLS = [
+const TOOLS = [
   {
     name: "Python",
     content: "Versatile powerhouse for data analytics, automation, and ML.",
