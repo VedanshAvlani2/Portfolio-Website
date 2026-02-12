@@ -38,7 +38,12 @@ import {
   SiVercel,
   SiGithub,
   SiResend,
+  SiCss3,
+  SiHtml5,
+  SiDocker,
+  SiOpenai,
 } from "react-icons/si";
+import css from "styled-jsx/css";
 
 const BASE_PATH = "/assets/projects-screenshots";
 
@@ -268,6 +273,30 @@ const PROJECT_SKILLS = {
     bg: "black",
     fg: "white",
     icon: <SiResend />,
+  },
+  html: {
+    title: "HTML",
+    bg: "black",
+    fg: "white",
+    icon: <SiHtml5 />,
+  },
+  css: {
+    title: "CSS",
+    bg: "black",
+    fg: "white",
+    icon: <SiCss3 />,
+  },
+  docker: {
+    title: "Docker",
+    bg: "black",
+    fg: "white",
+    icon: <SiDocker />,
+  },
+  openai:{
+    title: "OpenAI",
+    bg: "black",
+    fg: "white",
+    icon: <SiOpenai />,
   }
 };
 
@@ -633,18 +662,15 @@ const projects: Project[] = [
     screenshots: ["Portfolio Header.png"],
     skills: {
       frontend: [
-        PROJECT_SKILLS.react,
-        PROJECT_SKILLS.nextjs,
-        PROJECT_SKILLS.typescript,
-        PROJECT_SKILLS.tailwind,
-        PROJECT_SKILLS.webgl,
-        PROJECT_SKILLS.threejs,
+        PROJECT_SKILLS.html,
+        PROJECT_SKILLS.css,
       ],
       backend: [
-        PROJECT_SKILLS.node,
-        PROJECT_SKILLS.vercel,
+        PROJECT_SKILLS.python,
         PROJECT_SKILLS.github,
-        PROJECT_SKILLS.resend,
+        PROJECT_SKILLS.docker,
+        PROJECT_SKILLS.openai,
+
       ],
     },
     github: "https://github.com/VedanshAvlani2/Portfolio-Website",
@@ -674,6 +700,61 @@ const projects: Project[] = [
             `${BASE_PATH}/Portfolio Website/Portfolio 2.png`,
             `${BASE_PATH}/Portfolio Website/Portfolio 3.png`,
             `${BASE_PATH}/Portfolio Website/Portfolio 4.png`,
+          ]} />
+        </div>
+      );
+    },
+  },
+  {
+    id: "prompt-fuzzing-framework",
+    category: "AI Safety & LLM Evaluation",
+    title: "Prompt Fuzzing Framework",
+    src: "/assets/projects-screenshots/Portfolio Website/Portfolio Header.png",
+    screenshots: ["Prompt Fuzzing Header.png"],
+    skills: {
+      frontend: [
+        PROJECT_SKILLS.html,
+        PROJECT_SKILLS.nextjs,
+        PROJECT_SKILLS.typescript,
+        PROJECT_SKILLS.tailwind,
+        PROJECT_SKILLS.webgl,
+        PROJECT_SKILLS.threejs,
+      ],
+      backend: [
+        PROJECT_SKILLS.node,
+        PROJECT_SKILLS.vercel,
+        PROJECT_SKILLS.github,
+        PROJECT_SKILLS.resend,
+      ],
+    },
+    github: "https://github.com/VedanshAvlani2/Prompt-Fuzzing-Framework-for-LLM-Safety-Testing",
+    get content() {
+      return (
+        <div>
+          <TypographyP className="font-mono">
+            Designed an automated prompt fuzzing framework to evaluate safety,
+            alignment, and policy violations in open-source LLMs (LLaMA, Mistral).
+            Built a model-aware attack engine that mutated a curated corpus of 186
+            seed prompts using paraphrasing, obfuscation, contextual role injection,
+            and GODMODE-style jailbreak wrappers to stress-test guardrails at scale.
+          </TypographyP>
+
+          <ProjectsLinks repo={this.github} live={this.live} />
+
+          <TypographyH3 className="my-4 mt-8">Key Features</TypographyH3>
+          <ul className="list-disc ml-6 font-mono">
+            <li>Attack engine with paraphrasing, obfuscation, role injection, and model-aware wrapper strategies</li>
+            <li>Curated seed corpus (186 prompts) for reproducible safety stress-testing</li>
+            <li>Context-aware safety evaluation pipeline: Safe, Suspicious, Unsafe classification</li>
+            <li>Reproducible benchmark artifacts + structured logs for traceability</li>
+            <li>Triage dashboard with severity filtering and cross-model comparison</li>
+            <li>Local LM Studio inference to optimize runtime from ~55 minutes to 2–3 minutes per seed</li>
+          </ul>
+
+          <SlideShow images={[
+            `${BASE_PATH}/Prompt Fuzzing/Prompt Fuzzing 1.png`,
+            `${BASE_PATH}/Prompt Fuzzing/Prompt Fuzzing 2.png`,
+            `${BASE_PATH}/Prompt Fuzzing/Prompt Fuzzing 3.png`,
           ]} />
         </div>
       );
