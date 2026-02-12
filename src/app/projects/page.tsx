@@ -108,6 +108,17 @@ const PROJECTS = [
       "/assets/projects-screenshots/Portfolio Website/Portfolio 4.png",
     ],
   },
+  {
+    id: 9,
+    name: "Prompt Fuzzing Framework",
+    description: `modular LLM safety evaluation system that systematically mutates input prompts to stress-test large language models for vulnerabilities, unsafe outputs, and guardrail failures. It combines automated prompt generation, sandboxed execution, multi-model adapters, and structured triage reporting to enable scalable, responsible AI red-teaming.`,
+    link: "https://github.com/VedanshAvlani2/Prompt-Fuzzing-Framework-for-LLM-Safety-Testing",
+    images: [
+      "/assets/projects-screenshots/Prompt Fuzzing/Prompt Fuzzing 1.png",
+      "/assets/projects-screenshots/Prompt Fuzzing/Prompt Fuzzing 2.png",
+      "/assets/projects-screenshots/Prompt Fuzzing/Prompt Fuzzing 3.png",
+    ],
+  },
 ];
 
 function Page() {
