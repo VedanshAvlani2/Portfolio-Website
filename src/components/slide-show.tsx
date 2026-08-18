@@ -33,19 +33,20 @@ const SlideShow = ({ images }: { images: string[] }) => {
     >
       <SplideTrack>
         {images.map((image, idx) => (
-          <SplideSlide key={idx} className="flex items-center">
+          <SplideSlide key={idx} className="flex items-center justify-center">
             <Dialog>
               <DialogTrigger
-                className="relative"
+                className="relative w-full aspect-video overflow-hidden rounded-lg"
                 onMouseEnter={() => setHovering(true)}
                 onMouseLeave={() => setHovering(false)}
               >
                 <Image
                   src={image}
                   alt="screenshot"
-                  width={1000}
-                  height={1000}
-                  className="w-full rounded-lg h-auto"
+                  width={1600}
+                  height={900}
+                  sizes="(max-width: 768px) 100vw, 800px"
+                  className="w-full h-full rounded-lg object-contain bg-neutral-100 dark:bg-neutral-900"
                 />
                 <AnimatePresence>
                   {hovering && (
@@ -72,8 +73,8 @@ const SlideShow = ({ images }: { images: string[] }) => {
                   alt="screenshot"
                   width={1000}
                   height={1000}
-                  className="w-full"
-                  style={{ objectFit: "contain", width: "100vw" }}
+                  className="w-full h-full"
+                  style={{ objectFit: "contain" }}
                 />
               </DialogContent>
             </Dialog>

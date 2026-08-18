@@ -3,7 +3,16 @@ import SlideShow from "@/components/slide-show";
 import { Button } from "@/components/ui/button";
 import { TypographyH3, TypographyP } from "@/components/ui/typography";
 import { Title } from "@radix-ui/react-toast";
-import { ArrowUpRight } from "lucide-react";
+import {
+  ArrowUpRight,
+  Workflow,
+  Waypoints,
+  Zap,
+  Database,
+  LineChart,
+  ShieldAlert,
+  Gauge,
+} from "lucide-react";
 import { ReactNode } from "react";
 import {
   SiPython,
@@ -42,6 +51,14 @@ import {
   SiHtml5,
   SiDocker,
   SiOpenai,
+  SiSqlite,
+  SiExpress,
+  SiPytorch,
+  SiPytest,
+  SiChartdotjs,
+  SiVite,
+  SiEthereum,
+  SiChainlink,
 } from "react-icons/si";
 import css from "styled-jsx/css";
 
@@ -292,12 +309,102 @@ const PROJECT_SKILLS = {
     fg: "white",
     icon: <SiDocker />,
   },
-  openai:{
+  openai: {
     title: "OpenAI",
     bg: "black",
     fg: "white",
     icon: <SiOpenai />,
-  }
+  },
+  langgraph: {
+    title: "LangGraph",
+    bg: "black",
+    fg: "white",
+    icon: <Workflow />,
+  },
+  langchain: {
+    title: "LangChain",
+    bg: "black",
+    fg: "white",
+    icon: <Waypoints />,
+  },
+  groq: {
+    title: "Groq",
+    bg: "black",
+    fg: "white",
+    icon: <Zap />,
+  },
+  chromadb: {
+    title: "ChromaDB",
+    bg: "black",
+    fg: "white",
+    icon: <Database />,
+  },
+  sqlite: {
+    title: "SQLite",
+    bg: "black",
+    fg: "white",
+    icon: <SiSqlite />,
+  },
+  express: {
+    title: "Express",
+    bg: "black",
+    fg: "white",
+    icon: <SiExpress />,
+  },
+  recharts: {
+    title: "Recharts",
+    bg: "black",
+    fg: "white",
+    icon: <SiChartdotjs />,
+  },
+  pytorch: {
+    title: "PyTorch",
+    bg: "black",
+    fg: "white",
+    icon: <SiPytorch />,
+  },
+  pytest: {
+    title: "pytest",
+    bg: "black",
+    fg: "white",
+    icon: <SiPytest />,
+  },
+  fred: {
+    title: "FRED API",
+    bg: "black",
+    fg: "white",
+    icon: <LineChart />,
+  },
+  vite: {
+    title: "Vite",
+    bg: "black",
+    fg: "white",
+    icon: <SiVite />,
+  },
+  web3: {
+    title: "web3.py",
+    bg: "black",
+    fg: "white",
+    icon: <SiEthereum />,
+  },
+  chainlink: {
+    title: "Chainlink",
+    bg: "black",
+    fg: "white",
+    icon: <SiChainlink />,
+  },
+  llmsafety: {
+    title: "LLM Red-Teaming",
+    bg: "black",
+    fg: "white",
+    icon: <ShieldAlert />,
+  },
+  montecarlo: {
+    title: "Monte Carlo",
+    bg: "black",
+    fg: "white",
+    icon: <Gauge />,
+  },
 };
 
 export type Project = {
@@ -314,18 +421,24 @@ export type Project = {
 
 const projects: Project[] = [
   {
-    id: "f1-race-prediction",
-    category: "Machine Learning",
-    title: "F1 Race Prediction",
-    src: "/assets/projects-screenshots/F1 Race Prediction/F1 Race Prediction Header.png",
-    screenshots: ["F1 Race Prediction Header.png"],
+    id: "f1-race-strategist",
+    category: "Agentic AI / Machine Learning",
+    title: "F1 Race Strategist — AI Team General Manager",
+    src: "/assets/projects-screenshots/F1 Race Strategist/F1 Race Strategist Header.png",
+    screenshots: ["F1 Race Strategist Header.png"],
     skills: {
-      frontend: [PROJECT_SKILLS.streamlit],
+      frontend: [
+        PROJECT_SKILLS.react,
+        PROJECT_SKILLS.typescript,
+        PROJECT_SKILLS.recharts,
+      ],
       backend: [
         PROJECT_SKILLS.python,
+        PROJECT_SKILLS.langgraph,
+        PROJECT_SKILLS.groq,
+        PROJECT_SKILLS.fastapi,
         PROJECT_SKILLS.sklearn,
         PROJECT_SKILLS.pandas,
-        PROJECT_SKILLS.numpy,
         PROJECT_SKILLS.f1,
       ],
     },
@@ -334,32 +447,394 @@ const projects: Project[] = [
       return (
         <div>
           <TypographyP className="font-mono text-2xl text-center">
-            Predicting Formula 1 Race Outcomes with Machine Learning
+            A pit wall that argues with itself before it tells you to box
           </TypographyP>
           <TypographyP className="font-mono">
-            A machine learning system that predicts Formula 1 race lap times using
-            driver sector performance, qualifying data, constructor points, team statistics, and 
-            weather-adjusted metrics. Powered by the FastF1 API, the project
-            integrates real-world data and serves predictions through an
-            interactive Streamlit dashboard.
+            A real-time Formula 1 strategy system in which a LangGraph multi-agent
+            pipeline — strategist, risk, skeptic, and synthesis — deliberates over
+            deterministic model outputs. The agents disagree visibly and then reconcile
+            into a pit-stop recommendation with a confidence score, and every piece of
+            LLM reasoning is strictly grounded in numbers the models actually computed
+            rather than anything the language model invented.
           </TypographyP>
           <ProjectsLinks live={this.live} repo={this.github} />
           <TypographyH3 className="my-4 mt-8">Key Features</TypographyH3>
           <ul className="list-disc ml-6 font-mono">
-            <li>Live & historical F1 data ingestion through FastF1</li>
-            <li>Feature engineering with sector times, team scores, and weather factors</li>
-            <li>Gradient Boosting Regressor for lap time prediction</li>
-            <li>Race selection, driver input, and real-time results via Streamlit</li>
-            <li>Feature importance insights highlighting key performance drivers</li>
+            <li>
+              Four-agent LangGraph deliberation loop (strategist, risk, skeptic,
+              synthesis) producing confidence-scored pit-stop calls
+            </li>
+            <li>
+              Tire degradation model trained on 85,000+ laps across 99 Grands Prix
+              using leakage-free GroupKFold cross-validation
+            </li>
+            <li>
+              0.58s MAE on lap-time degradation versus a 0.80s baseline — a 28%
+              improvement
+            </li>
+            <li>
+              Per-circuit pit loss measured from 2,400+ real pit stops, feeding a
+              Monte Carlo pre-race planner at 800 simulations per plan
+            </li>
+            <li>
+              Generated pit-wall briefs with fallback plans and explicit switch triggers
+            </li>
+            <li>
+              React dashboard with telemetry-driven race replay and live championship
+              tracking over a FastAPI backend
+            </li>
+            <li>
+              LLM output constrained to computed values only, so recommendations stay
+              auditable rather than hallucinated
+            </li>
           </ul>
           <br></br>
           <br></br>
           <SlideShow
             images={[
-              `${BASE_PATH}/F1 Race Prediction/F1 Race Prediction 1.png`,
-              `${BASE_PATH}/F1 Race Prediction/F1 Race Prediction 2.png`,
-              `${BASE_PATH}/F1 Race Prediction/F1 Race Prediction 3.png`,
-              `${BASE_PATH}/F1 Race Prediction/F1 Race Prediction 4.png`,
+              `${BASE_PATH}/F1 Race Strategist/F1 Race Strategist 1.png`,
+              `${BASE_PATH}/F1 Race Strategist/F1 Race Strategist 2.png`,
+              `${BASE_PATH}/F1 Race Strategist/F1 Race Strategist 3.png`,
+              `${BASE_PATH}/F1 Race Strategist/F1 Race Strategist 4.png`,
+            ]}
+          />
+        </div>
+      );
+    },
+  },
+  {
+    id: "devassist",
+    category: "Agentic AI / Developer Tools",
+    title: "DevAssist — AI Coding Assistant",
+    src: "/assets/projects-screenshots/DevAssist/DevAssist Header.png",
+    screenshots: ["DevAssist Header.png"],
+    skills: {
+      frontend: [PROJECT_SKILLS.html, PROJECT_SKILLS.css],
+      backend: [
+        PROJECT_SKILLS.python,
+        PROJECT_SKILLS.langgraph,
+        PROJECT_SKILLS.langchain,
+        PROJECT_SKILLS.fastapi,
+        PROJECT_SKILLS.chromadb,
+        PROJECT_SKILLS.groq,
+        PROJECT_SKILLS.openai,
+        PROJECT_SKILLS.sqlite,
+        PROJECT_SKILLS.pytest,
+        PROJECT_SKILLS.github,
+      ],
+    },
+    github: "https://github.com/VedanshAvlani2/DevAssist",
+    get content() {
+      return (
+        <div>
+          <TypographyP className="font-mono text-2xl text-center">
+            Point it at any GitHub repo, describe the change in English, get a pull request
+          </TypographyP>
+          <TypographyP className="font-mono">
+            A self-hosted AI coding assistant that works against any GitHub repository.
+            You describe a task in plain language and it plans the change, retrieves
+            relevant context through RAG, generates code with a real unified diff, writes
+            pytest tests, runs them in a sandbox, and opens a pull request — with no human
+            intervention until the approval step. Validated across retrylib, FastAPI, and
+            custom repositories.
+          </TypographyP>
+          <ProjectsLinks live={this.live} repo={this.github} />
+          <TypographyH3 className="my-4 mt-8">Key Features</TypographyH3>
+          <ul className="list-disc ml-6 font-mono">
+            <li>
+              Six-node stateful LangGraph pipeline: plan, RAG retrieve, multi-file
+              generate, diff, test-write, and sandboxed test run
+            </li>
+            <li>
+              Real-time Server-Sent Events streaming, so every node&apos;s progress lands in
+              the browser as it happens
+            </li>
+            <li>
+              750 tokens/sec generation throughput via Groq Llama 3.3 70B, with 18s
+              end-to-end pipeline latency
+            </li>
+            <li>
+              RAG over ChromaDB with OpenAI text-embedding-3-small — repos chunked at
+              1,000 characters with 200-character overlap, top-5 retrieval per query, and
+              fallback handling for retrieval misses
+            </li>
+            <li>
+              513-task eval bank across 38 subcategories, with regex-based zero-cost task
+              selection that eliminated GPT-4o calls from the selection phase entirely and
+              saved roughly $0.10 per eval run
+            </li>
+            <li>
+              Per-repo named ChromaDB collections persisted to disk, so indexing is a
+              one-time cost per repository
+            </li>
+            <li>
+              Inline code editing before approval, then automated commit and PR creation
+              through PyGitHub
+            </li>
+            <li>SQLite-backed metrics tracking timing and cost on every run</li>
+          </ul>
+          <br></br>
+          <br></br>
+          <SlideShow
+            images={[
+              `${BASE_PATH}/DevAssist/DevAssist 1.png`,
+              `${BASE_PATH}/DevAssist/DevAssist 2.png`,
+              `${BASE_PATH}/DevAssist/DevAssist 3.png`,
+              `${BASE_PATH}/DevAssist/DevAssist 4.png`,
+            ]}
+          />
+        </div>
+      );
+    },
+  },
+  {
+    id: "velox",
+    category: "FinTech / Full-Stack",
+    title: "Velox — Goldman Sachs Hackathon (3rd Place)",
+    src: "/assets/projects-screenshots/Velox/Velox Header.png",
+    screenshots: ["Velox Header.png"],
+    skills: {
+      frontend: [
+        PROJECT_SKILLS.react,
+        PROJECT_SKILLS.recharts,
+        PROJECT_SKILLS.vite,
+        PROJECT_SKILLS.css,
+      ],
+      backend: [
+        PROJECT_SKILLS.node,
+        PROJECT_SKILLS.express,
+        PROJECT_SKILLS.sqlite,
+        PROJECT_SKILLS.fred,
+        PROJECT_SKILLS.groq,
+        PROJECT_SKILLS.finance,
+        PROJECT_SKILLS.montecarlo,
+      ],
+    },
+    github:
+      "https://github.com/VedanshAvlani2/VELOX--Goldman-Sachs-Hackathon-2k26",
+    get content() {
+      return (
+        <div>
+          <TypographyP className="font-mono text-2xl text-center">
+            A macro-aware portfolio engine — 3rd place at the Goldman Sachs Hackathon
+          </TypographyP>
+          <TypographyP className="font-mono">
+            A full-stack investment platform that classifies the market into Risk-On,
+            Moderate, and Risk-Off regimes using FRED GDP and Fed Funds Rate signals, then
+            drives monthly ETF rebalancing benchmarked against SPY. Performance charts are
+            shaded by regime so you can see which calls the macro signal actually earned.
+          </TypographyP>
+          <ProjectsLinks live={this.live} repo={this.github} />
+          <TypographyH3 className="my-4 mt-8">Key Features</TypographyH3>
+          <ul className="list-disc ml-6 font-mono">
+            <li>
+              Market regime classification from FRED macro signals, driving monthly ETF
+              rebalancing benchmarked against SPY
+            </li>
+            <li>
+              1,000-path Monte Carlo simulations via Geometric Brownian Motion over five
+              years of per-ticker price history
+            </li>
+            <li>
+              p10–p90 fan charts with max drawdown, CAGR, and goal-attainment probability
+            </li>
+            <li>
+              Composite Health Score ring blending diversification, a volatility
+              proxy, goal alignment, and cash buffer, with a concentration penalty
+              when one holding dominates
+            </li>
+            <li>
+              Live Yahoo Finance quotes with weighted portfolio beta and an automatic
+              stocks-versus-funds split
+            </li>
+            <li>
+              React + Vite client over an Express + SQLite API with JWT and bcrypt auth,
+              running entirely on localhost
+            </li>
+            <li>Portfolio shock simulator for stress-testing allocations</li>
+            <li>
+              Groq-powered AI assistant seeded with the user&apos;s live holdings and current
+              macro context
+            </li>
+          </ul>
+          <br></br>
+          <br></br>
+          <SlideShow
+            images={[
+              `${BASE_PATH}/Velox/Velox 1.png`,
+              `${BASE_PATH}/Velox/Velox 2.png`,
+              `${BASE_PATH}/Velox/Velox 3.png`,
+              `${BASE_PATH}/Velox/Velox 4.png`,
+            ]}
+          />
+        </div>
+      );
+    },
+  },
+  {
+    id: "prism",
+    category: "FinTech / Risk Intelligence",
+    title: "PRISM — DeFi Risk Intelligence (FinHack 2026)",
+    src: "/assets/projects-screenshots/PRISM/PRISM Header.png",
+    screenshots: ["PRISM Header.png"],
+    skills: {
+      frontend: [
+        PROJECT_SKILLS.react,
+        PROJECT_SKILLS.typescript,
+        PROJECT_SKILLS.vite,
+        PROJECT_SKILLS.tailwind,
+        PROJECT_SKILLS.recharts,
+      ],
+      backend: [
+        PROJECT_SKILLS.python,
+        PROJECT_SKILLS.fastapi,
+        PROJECT_SKILLS.pandas,
+        PROJECT_SKILLS.numpy,
+        PROJECT_SKILLS.web3,
+        PROJECT_SKILLS.chainlink,
+        PROJECT_SKILLS.montecarlo,
+      ],
+    },
+    github: "https://github.com/VedanshAvlani2/PRISM---FinHack-2026",
+    get content() {
+      return (
+        <div>
+          <TypographyP className="font-mono text-2xl text-center">
+            Protocol Reflexivity, Insolvency, Stress and Marketability Score
+          </TypographyP>
+          <TypographyP className="font-mono">
+            A DeFi risk intelligence platform that scores protocols 0–100 and outputs
+            exactly one signal: ENTER, HOLD, REDUCE, or EXIT. PRISM measures TVL
+            <i> quality</i>, not TVL level — it tells a portfolio manager whether their
+            position is too large for a protocol&apos;s real exit liquidity under stress.
+            Built for FinHack 2026 at UT Dallas.
+          </TypographyP>
+          <ProjectsLinks live={this.live} repo={this.github} />
+          <TypographyH3 className="my-4 mt-8">Key Features</TypographyH3>
+          <ul className="list-disc ml-6 font-mono">
+            <li>
+              Six weighted risk pillars — liquidity resilience, liquidation cascade,
+              governance capture, oracle reliability, supply pressure, and narrative
+              risk — recomputed every 15 minutes from live on-chain data
+            </li>
+            <li>
+              Triple Convergence Alert: fires only when a narrative mention spike, a new
+              governance proposal within 48 hours, and a &gt;5% TVL decline hit at once,
+              applying an 8-point penalty and escalating the action one level
+            </li>
+            <li>
+              Stress Lab with six predefined scenarios (ETH crash, whale exit, oracle
+              staleness and more) plus Monte Carlo analysis and a four-act cascade demo
+            </li>
+            <li>
+              Multi-source ingestion across DefiLlama, The Graph, Snapshot, Dune
+              Analytics, and Chainlink on-chain feeds read via web3.py
+            </li>
+            <li>
+              VADER sentiment NLP over live news feeds driving the narrative risk pillar,
+              with a mention-velocity chart
+            </li>
+            <li>
+              Cross-protocol portfolio view with a risk table, safe allocation chart, and
+              correlation matrix
+            </li>
+            <li>Monitoring Aave V3, Uniswap V3, and Stargate Finance</li>
+          </ul>
+          <br></br>
+          <br></br>
+          <SlideShow
+            images={[
+              `${BASE_PATH}/PRISM/PRISM 1.png`,
+              `${BASE_PATH}/PRISM/PRISM 2.png`,
+              `${BASE_PATH}/PRISM/PRISM 3.png`,
+              `${BASE_PATH}/PRISM/PRISM 4.png`,
+            ]}
+          />
+        </div>
+      );
+    },
+  },
+  {
+    id: "promptsentinel",
+    category: "AI Safety & LLM Evaluation",
+    title: "PromptSentinel — Prompt Security Platform",
+    src: "/assets/projects-screenshots/PromptSentinel/PromptSentinel Header.png",
+    screenshots: ["PromptSentinel Header.png"],
+    skills: {
+      frontend: [
+        PROJECT_SKILLS.react,
+        PROJECT_SKILLS.typescript,
+        PROJECT_SKILLS.vite,
+        PROJECT_SKILLS.tailwind,
+      ],
+      backend: [
+        PROJECT_SKILLS.groq,
+        PROJECT_SKILLS.llmsafety,
+        PROJECT_SKILLS.github,
+      ],
+    },
+    github: "https://github.com/VedanshAvlani2/PromptSentinel",
+    get content() {
+      return (
+        <div>
+          <TypographyP className="font-mono text-2xl text-center">
+            Audit. Harden. Ship with confidence.
+          </TypographyP>
+          <TypographyP className="font-mono">
+            Your system prompt is an attack surface. A single crafted user message can
+            override your instructions, extract your proprietary prompt, or jailbreak the
+            model — and most developers have no way to test for it before shipping.
+            PromptSentinel closes that gap: paste a system prompt, get a security score,
+            see exactly how each attack would succeed, and download a hardened rewrite
+            with safety rules injected.
+          </TypographyP>
+          <ProjectsLinks live={this.live} repo={this.github} />
+          <TypographyH3 className="my-4 mt-8">Key Features</TypographyH3>
+          <ul className="list-disc ml-6 font-mono">
+            <li>
+              Shield: a red-team audit across 10 attack vectors — prompt injection, role
+              confusion, system prompt leak, DAN jailbreak, token boundary manipulation,
+              indirect injection, multi-turn escalation, context overflow, instruction
+              hierarchy attacks, and output format manipulation
+            </li>
+            <li>
+              Per-vector verdict (VULNERABLE / WARNING / BLOCKED) with a realistic
+              adversarial input, the simulated failure response, and Data, Brand, and
+              Compliance risk ratings
+            </li>
+            <li>
+              Calibrated 0–100 security score — a bare prompt lands at 10–25, a fully
+              hardened one at 75–95
+            </li>
+            <li>
+              Hardened rewrite with a second scoring pass, so the point improvement is
+              measured rather than estimated, viewable in diff or full mode
+            </li>
+            <li>
+              Named fix strategies mapped per vulnerability: Instruction Isolation,
+              Persona Hardening, Confidentiality Guardrails, Override Resistance, Content
+              Sanitization, Context Persistence
+            </li>
+            <li>
+              Forge: a structured five-section prompt builder that sends straight to
+              Shield, auto-injecting detected vulnerabilities as safety rules
+            </li>
+            <li>
+              Downloadable pre- and post-hardening reports with full audit data and
+              deployment recommendations
+            </li>
+            <li>
+              Powered by Groq with Llama 3.3 70B under a forced JSON response schema
+            </li>
+          </ul>
+          <br></br>
+          <br></br>
+          <SlideShow
+            images={[
+              `${BASE_PATH}/PromptSentinel/PromptSentinel 1.png`,
+              `${BASE_PATH}/PromptSentinel/PromptSentinel 2.png`,
+              `${BASE_PATH}/PromptSentinel/PromptSentinel 3.png`,
+              `${BASE_PATH}/PromptSentinel/PromptSentinel 4.png`,
             ]}
           />
         </div>
@@ -742,8 +1217,9 @@ const projects: Project[] = [
 
           <TypographyH3 className="my-4 mt-8">Key Features</TypographyH3>
           <ul className="list-disc ml-6 font-mono">
-            <li>Attack engine with paraphrasing, obfuscation, role injection, and model-aware wrapper strategies</li>
-            <li>Curated seed corpus (186 prompts) for reproducible safety stress-testing</li>
+            <li>Led attack engine development on a 5-person team, architecting a modular 6-component safety evaluation system</li>
+            <li>Four-variant mutation engine: paraphrasing, obfuscation, role injection, and adversarial persona wrappers</li>
+            <li>Curated seed corpus (186 prompts) for reproducible safety stress-testing across LLaMA and Mistral</li>
             <li>Context-aware safety evaluation pipeline: Safe, Suspicious, Unsafe classification</li>
             <li>Reproducible benchmark artifacts + structured logs for traceability</li>
             <li>Triage dashboard with severity filtering and cross-model comparison</li>

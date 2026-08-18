@@ -54,8 +54,19 @@ import {
   SiArduino,
   SiAutodesk,
   SiReact,
+  SiPytorch,
+  SiScikitlearn,
+  SiPandas,
+  SiFastapi,
+  SiSupabase,
+  SiGooglecloud,
+  SiApachehadoop,
+  SiFigma,
+  SiSqlite,
 } from "react-icons/si";
 import { VscCode } from "react-icons/vsc";
+import { VscAzure } from "react-icons/vsc";
+import { Workflow, Waypoints, Zap, Database } from "lucide-react";
 
 // @ts-ignore
 import { Splide, SplideSlide } from "@splidejs/react-splide";
@@ -225,8 +236,98 @@ const TOOLS = [
   {
     name: "Hugging Face",
     content: "Empowering modern NLP and generative AI with transformer models.",
-    icon: <img src="public\huggingface.svg" alt="Hugging Face" width="50" height="50" />,
+    icon: <img src="/huggingface.svg" alt="Hugging Face" width="50" height="50" />,
     color: "#FFD54F",
+  },
+  {
+    name: "PyTorch",
+    content: "Deep learning framework for training and fine-tuning models.",
+    icon: <SiPytorch size={"50px"} color="#EE4C2C" />,
+    color: "#EE4C2C",
+  },
+  {
+    name: "LangGraph",
+    content: "Stateful graphs for multi-agent pipelines that actually deliberate.",
+    icon: <Workflow size={50} color="#1C3C3C" />,
+    color: "#1C3C3C",
+  },
+  {
+    name: "LangChain",
+    content: "Composable building blocks for LLM applications and RAG.",
+    icon: <Waypoints size={50} color="#1C3C3C" />,
+    color: "#1C3C3C",
+  },
+  {
+    name: "Groq",
+    content: "Blistering inference speed for real-time LLM workloads.",
+    icon: <Zap size={50} color="#F55036" />,
+    color: "#F55036",
+  },
+  {
+    name: "ChromaDB",
+    content: "Vector store powering retrieval over embedded codebases.",
+    icon: <Database size={50} color="#FF6B6B" />,
+    color: "#FF6B6B",
+  },
+  {
+    name: "Scikit-learn",
+    content: "The reliable workhorse for classical ML and evaluation.",
+    icon: <SiScikitlearn size={"50px"} color="#F7931E" />,
+    color: "#F7931E",
+  },
+  {
+    name: "Pandas",
+    content: "Data wrangling that turns messy files into usable frames.",
+    icon: <SiPandas size={"50px"} color="#150458" />,
+    color: "#150458",
+  },
+  {
+    name: "FastAPI",
+    content: "Fast, typed Python APIs for serving models and pipelines.",
+    icon: <SiFastapi size={"50px"} color="#009688" />,
+    color: "#009688",
+  },
+  {
+    name: "Docker",
+    content: "Reproducible environments so it runs the same everywhere.",
+    icon: <FaDocker size={"50px"} color="#2496ED" />,
+    color: "#2496ED",
+  },
+  {
+    name: "SQLite",
+    content: "Zero-config embedded database for local metrics and prototypes.",
+    icon: <SiSqlite size={"50px"} color="#003B57" />,
+    color: "#003B57",
+  },
+  {
+    name: "Supabase",
+    content: "Postgres with auth and realtime, without the setup tax.",
+    icon: <SiSupabase size={"50px"} color="#3ECF8E" />,
+    color: "#3ECF8E",
+  },
+  {
+    name: "Google Cloud",
+    content: "BigQuery for warehouse-scale analytics.",
+    icon: <SiGooglecloud size={"50px"} color="#4285F4" />,
+    color: "#4285F4",
+  },
+  {
+    name: "Azure",
+    content: "Cloud services for hosting and data workloads.",
+    icon: <VscAzure size={"50px"} color="#0078D4" />,
+    color: "#0078D4",
+  },
+  {
+    name: "Hadoop",
+    content: "HDFS and Hive for distributed big-data processing.",
+    icon: <SiApachehadoop size={"50px"} color="#66CCFF" />,
+    color: "#66CCFF",
+  },
+  {
+    name: "Figma",
+    content: "Wireframing and product design before a line of code.",
+    icon: <SiFigma size={"50px"} color="#F24E1E" />,
+    color: "#F24E1E",
   },
   {
     name: "React",
