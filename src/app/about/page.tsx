@@ -397,7 +397,7 @@ function Page() {
           >
             <h1 className="text-3xl mb-10 lg:md-20">About me</h1>
             <p className="mb-10 text-roboto">
-              Hey there! I'm <strong>Vedansh Avlani</strong>, a Business Analytics and AI enthusiast passionate about creating 
+              Hey there! I&apos;m <strong>Vedansh Avlani</strong>, a Business Analytics and AI enthusiast passionate about creating 
               data-driven digital experiences. 
               With a strong foundation in analytics, machine learning, and full-stack development, I love turning complex 
               problems into elegant, actionable solutions.
