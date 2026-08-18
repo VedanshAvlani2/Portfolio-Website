@@ -1,0 +1,58 @@
+PORTFOLIO UPDATE — remaining items
+==================================
+
+DONE (already applied to this folder):
+  - config.ts site URL trailing slash (was breaking every OG image URL)
+  - config.ts description + keywords refreshed for agentic AI / current profile
+  - README.md rewritten (was still the Naresh Khatri template README)
+  - .env.example added
+  - server.js CORS allowlist now includes the Vercel domain
+  - package.json: eslint-config-next ^16 -> ^14 (was mismatched against Next 14)
+  - Image sizing fixed globally: project cards + carousel now use a fixed 16:9
+    box. Was w-[400px] h-auto around an absolutely-positioned image (no
+    intrinsic height) and h-auto slides (carousel jumped height per slide).
+  - about/page.tsx: Hugging Face icon src was "public\huggingface.svg"
+    (Windows backslash + public/ prefix) -> 404. Now "/huggingface.svg".
+  - about/page.tsx: added PyTorch, LangGraph, LangChain, Groq, ChromaDB,
+    scikit-learn, Pandas, FastAPI, Docker, SQLite, Supabase, GCP, Azure,
+    Hadoop, Figma
+  - api/send/route.ts: Resend was instantiated at module scope, so a missing
+    RESEND_API_KEY crashed `next build` entirely. Now lazy.
+  - projects.tsx: added DevAssist, Velox, PRISM, PromptSentinel;
+    replaced F1 Race Prediction with F1 Race Strategist;
+    enriched Prompt Fuzzing Framework with resume metrics.
+    Verified: `next build` passes clean.
+
+TODO — YOU
+-----------
+1. SCREENSHOTS (Gemini). Render at 16:9 (1600x900). Folders are created:
+     public/assets/projects-screenshots/F1 Race Strategist/
+     public/assets/projects-screenshots/DevAssist/
+     public/assets/projects-screenshots/Velox/
+     public/assets/projects-screenshots/PRISM/
+     public/assets/projects-screenshots/PromptSentinel/
+   Each needs: "<Name> Header.png" + "<Name> 1.png" through "<Name> 4.png"
+   See README.txt in the projects-screenshots folder.
+
+2. SOCKET SERVER REPO. Apply the same CORS allowlist change to server.js in
+   the separate socket-server repo, then confirm NEXT_PUBLIC_WS_URL points at
+   the deployed socket host (wss://...), not localhost. Note: server.js cannot
+   run on Vercel serverless — it needs Railway/Render/Fly.
+
+3. F1 REPO NAME. The F1 entry links to F1-Race-Prediction but the project is
+   now "F1 Race Strategist". Consider renaming the repo, or confirm the old
+   name is intentional.
+
+4. 3D SKILLS KEYBOARD. constants.ts SKILLS is keyed by Spline object names
+   (animated-background.tsx does SKILLS[e.target.name]). Adding a skill does
+   nothing unless a keycap with that exact name exists in
+   public/assets/skills-keyboard.spline. To surface PyTorch / LangGraph /
+   Docker on the keyboard you must edit the Spline scene, or repurpose an
+   existing keycap by changing its label+icon in constants.ts while keeping
+   the object name. Weakest current keycap: "autodesk".
+
+5. OG IMAGE. config.ogImg points at /assets/seo/Portfolio 1.png — worth
+   refreshing now that the featured projects changed.
+
+6. OPTIONAL: retire the old "100K Trading Challenge - FinHack 2025" entry now
+   that PRISM (FinHack 2026) is on the site, if you don't want both.

@@ -424,8 +424,8 @@ const projects: Project[] = [
     id: "f1-race-strategist",
     category: "Agentic AI / Machine Learning",
     title: "F1 Race Strategist — AI Team General Manager",
-    src: "/assets/projects-screenshots/F1 Race Strategist/F1 Race Strategist Header.png",
-    screenshots: ["F1 Race Strategist Header.png"],
+    src: "/assets/projects-screenshots/F1 Race Strategist/F1 Race Strategist Header.jpg",
+    screenshots: ["F1 Race Strategist Header.jpg"],
     skills: {
       frontend: [
         PROJECT_SKILLS.react,
@@ -506,8 +506,8 @@ const projects: Project[] = [
     id: "devassist",
     category: "Agentic AI / Developer Tools",
     title: "DevAssist — AI Coding Assistant",
-    src: "/assets/projects-screenshots/DevAssist/DevAssist Header.png",
-    screenshots: ["DevAssist Header.png"],
+    src: "/assets/projects-screenshots/DevAssist/DevAssist Header.jpg",
+    screenshots: ["DevAssist Header.jpg"],
     skills: {
       frontend: [PROJECT_SKILLS.html, PROJECT_SKILLS.css],
       backend: [
@@ -591,8 +591,8 @@ const projects: Project[] = [
     id: "velox",
     category: "FinTech / Full-Stack",
     title: "Velox — Goldman Sachs Hackathon (3rd Place)",
-    src: "/assets/projects-screenshots/Velox/Velox Header.png",
-    screenshots: ["Velox Header.png"],
+    src: "/assets/projects-screenshots/Velox/Velox Header.jpg",
+    screenshots: ["Velox Header.jpg"],
     skills: {
       frontend: [
         PROJECT_SKILLS.react,
@@ -675,8 +675,8 @@ const projects: Project[] = [
     id: "prism",
     category: "FinTech / Risk Intelligence",
     title: "PRISM — DeFi Risk Intelligence (FinHack 2026)",
-    src: "/assets/projects-screenshots/PRISM/PRISM Header.png",
-    screenshots: ["PRISM Header.png"],
+    src: "/assets/projects-screenshots/PRISM/PRISM Header.jpg",
+    screenshots: ["PRISM Header.jpg"],
     skills: {
       frontend: [
         PROJECT_SKILLS.react,
@@ -758,8 +758,8 @@ const projects: Project[] = [
     id: "promptsentinel",
     category: "AI Safety & LLM Evaluation",
     title: "PromptSentinel — Prompt Security Platform",
-    src: "/assets/projects-screenshots/PromptSentinel/PromptSentinel Header.png",
-    screenshots: ["PromptSentinel Header.png"],
+    src: "/assets/projects-screenshots/PromptSentinel/PromptSentinel Header.jpg",
+    screenshots: ["PromptSentinel Header.jpg"],
     skills: {
       frontend: [
         PROJECT_SKILLS.react,
