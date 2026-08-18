@@ -580,7 +580,6 @@ const projects: Project[] = [
               `${BASE_PATH}/DevAssist/DevAssist 1.png`,
               `${BASE_PATH}/DevAssist/DevAssist 2.png`,
               `${BASE_PATH}/DevAssist/DevAssist 3.png`,
-              `${BASE_PATH}/DevAssist/DevAssist 4.png`,
             ]}
           />
         </div>
@@ -661,10 +660,10 @@ const projects: Project[] = [
           <br></br>
           <SlideShow
             images={[
-              `${BASE_PATH}/Velox/Velox 1.png`,
-              `${BASE_PATH}/Velox/Velox 2.png`,
-              `${BASE_PATH}/Velox/Velox 3.png`,
-              `${BASE_PATH}/Velox/Velox 4.png`,
+              `${BASE_PATH}/Velox/Velox 1.jpg`,
+              `${BASE_PATH}/Velox/Velox 2.jpg`,
+              `${BASE_PATH}/Velox/Velox 3.jpg`,
+              `${BASE_PATH}/Velox/Velox 4.jpg`,
             ]}
           />
         </div>
@@ -744,10 +743,11 @@ const projects: Project[] = [
           <br></br>
           <SlideShow
             images={[
-              `${BASE_PATH}/PRISM/PRISM 1.png`,
-              `${BASE_PATH}/PRISM/PRISM 2.png`,
-              `${BASE_PATH}/PRISM/PRISM 3.png`,
-              `${BASE_PATH}/PRISM/PRISM 4.png`,
+              `${BASE_PATH}/PRISM/PRISM 1.jpg`,
+              `${BASE_PATH}/PRISM/PRISM 2.jpg`,
+              `${BASE_PATH}/PRISM/PRISM 3.jpg`,
+              `${BASE_PATH}/PRISM/PRISM 4.jpg`,
+              `${BASE_PATH}/PRISM/PRISM 5.jpg`,
             ]}
           />
         </div>
@@ -831,10 +831,9 @@ const projects: Project[] = [
           <br></br>
           <SlideShow
             images={[
-              `${BASE_PATH}/PromptSentinel/PromptSentinel 1.png`,
-              `${BASE_PATH}/PromptSentinel/PromptSentinel 2.png`,
-              `${BASE_PATH}/PromptSentinel/PromptSentinel 3.png`,
-              `${BASE_PATH}/PromptSentinel/PromptSentinel 4.png`,
+              `${BASE_PATH}/PromptSentinel/PromptSentinel 1.jpg`,
+              `${BASE_PATH}/PromptSentinel/PromptSentinel 2.jpg`,
+              `${BASE_PATH}/PromptSentinel/PromptSentinel 3.jpg`,
             ]}
           />
         </div>
@@ -925,7 +924,7 @@ const projects: Project[] = [
           <br></br>
           <SlideShow
             images={[
-              `${BASE_PATH}/Customer Churn Prediction/Customer Churn Prediction.png`,
+              `${BASE_PATH}/Customer Churn Prediction/Customer Churn Prediction Header.png`,
               `${BASE_PATH}/Customer Churn Prediction/Random Forest Feature Importance Plot.png`,
               `${BASE_PATH}/Customer Churn Prediction/Comparison of all Models.png`,
               `${BASE_PATH}/Customer Churn Prediction/Comparison of all Models 2.png`,
@@ -973,7 +972,7 @@ const projects: Project[] = [
           <br></br>
           <SlideShow
             images={[
-              `${BASE_PATH}/Customer Conversion in Digital Marketing/Customer Conversion in Digital Marketing.png`,
+              `${BASE_PATH}/Customer Conversion in Digital Marketing/Customer Conversion in Digital Marketing Header.png`,
               `${BASE_PATH}/Customer Conversion in Digital Marketing/Correlation Heatmap.png`,
               `${BASE_PATH}/Customer Conversion in Digital Marketing/Decision tree trained on SMOTE data.png`,
               `${BASE_PATH}/Customer Conversion in Digital Marketing/Top 10 features in XG Boost.png`,

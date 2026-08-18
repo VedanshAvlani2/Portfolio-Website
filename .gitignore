@@ -38,3 +38,10 @@ yarn-error.log*
 next-env.d.ts
 
 changes needed.txt
+
+# OS / Explorer junk
+desktop.ini
+Thumbs.db
+ehthumbs.db
+$RECYCLE.BIN/
+.DS_Store
