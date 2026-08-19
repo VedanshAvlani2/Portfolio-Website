@@ -277,6 +277,7 @@ const AnimatedBackground = () => {
       } else {
         // splineApp.setVariable("heading", "");
         splineApp.setVariable("desc", "");
+        setSelectedSkill(null);
       }
       if (activeSection === "projects") {
         await sleep(300);
@@ -372,7 +373,11 @@ const AnimatedBackground = () => {
     splineApp.addEventListener("keyDown", (e) => {
       if (!splineApp) return;
       const skill = SKILLS[e.target.name as SkillNames];
-      if (skill) setSelectedSkill(skill);
+      // Guard the whole body: tapping a non-skill object (the platform, a
+      // decorative cap) used to fall through to `skill.label` and throw a
+      // TypeError inside this listener, breaking further interaction.
+      if (!skill) return;
+      setSelectedSkill(skill);
       splineApp.setVariable(
         "desc",
         `${skill.label}\n${wrapText(skill.shortDescription)}`
@@ -591,6 +596,33 @@ const AnimatedBackground = () => {
         does not appear and the rest of the site renders normally.
         bypassLoading() is called on failure so the preloader never gets stuck.
       */}
+      {/*
+        On mobile the skill label and description are drawn as 3D text INSIDE
+        the Spline scene, which is scaled and repositioned for small viewports
+        (STATES[section].mobile) — so that panel ends up unreadable or
+        off-screen and tapping a key appears to do nothing. This HTML overlay
+        renders the same content in the DOM, where layout is predictable.
+        Desktop keeps using the in-scene text via setVariable("desc", ...).
+      */}
+      {isMobile && activeSection === "skills" && selectedSkill && (
+        <div className="md:hidden fixed inset-x-0 bottom-8 z-50 flex justify-center px-6 pointer-events-none">
+          <div
+            className="w-full max-w-sm rounded-xl border border-white/15 bg-black/80 px-5 py-4 backdrop-blur-md shadow-xl"
+            role="status"
+            aria-live="polite"
+          >
+            <p
+              className="text-base font-semibold"
+              style={{ color: selectedSkill.color }}
+            >
+              {selectedSkill.label}
+            </p>
+            <p className="mt-1 text-sm leading-snug text-zinc-300">
+              {selectedSkill.shortDescription}
+            </p>
+          </div>
+        </div>
+      )}
       <ErrorBoundary onError={bypassLoading} fallback={null}>
         <Suspense fallback={null}>
           <Spline
