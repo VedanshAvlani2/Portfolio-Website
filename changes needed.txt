@@ -56,3 +56,45 @@ TODO — YOU
 
 6. OPTIONAL: retire the old "100K Trading Challenge - FinHack 2025" entry now
    that PRISM (FinHack 2026) is on the site, if you don't want both.
+
+SESSION 2 — LAYOUT & MOBILE FIXES (applied, verified locally)
+------------------------------------------------------------
+1. MOBILE BLANK PAGE — root cause found and fixed.
+   animated-background.tsx loads its Spline scene from
+   https://prod.spline.design/... When that fetch fails (slow/flaky mobile
+   network, blocked CDN, offline), @splinetool/react-spline THROWS. There was
+   no error boundary anywhere above it, so React unmounted the ENTIRE app and
+   visitors saw a blank dark screen.
+   Reproduced in a headless mobile viewport: DOM went from 19 elements to 0
+   one second after load.
+   Fix: new src/components/error-boundary.tsx, wrapped around <Spline>.
+   bypassLoading() is called on failure so the preloader cannot get stuck.
+   Verified: with the scene fetch failing, HEADER/MAIN/FOOTER now survive and
+   the page renders normally minus the 3D keyboard.
+
+2. COVER IMAGES CROPPED — cards were aspect-video (plus an inline
+   aspectRatio: 3/2 override) with object-cover, while every cover image is
+   1024x1024. Cards are now aspect-square, so squares display uncropped.
+   Card <Image> was also 300x300 upscaled into a 400px box; now 800x800 with
+   a sizes hint.
+
+3. CONTACT OVERLAPPING PROJECTS — the projects <section> had a fixed
+   md:h-[130vh] while holding 13 cards across 5 rows, so content spilled past
+   the container and Contact started underneath it. Height removed, replaced
+   with pb-32 + grid gaps (gap-y-10 gap-x-6) and a sm:grid-cols-2 breakpoint.
+   Verified: projects bottom and contact top now differ by 0px overlap.
+
+4. SCROLLBAR HIDDEN — globals.css hides the scrollbar on html/body and on
+   overflow panels, for WebKit, Firefox and legacy Edge. Wheel, trackpad,
+   touch, keyboard and programmatic scrolling are all unaffected.
+
+STILL OPEN
+----------
+- Spline scene is still a remote CDN dependency. public/assets/skills-keyboard.spline
+  exists locally and is commented out in animated-background.tsx line ~592.
+  Switching to the local file would remove the network dependency entirely,
+  but verify the keycap object names still match SKILLS in constants.ts first.
+- 3D keyboard cannot show new skills (PyTorch/LangGraph/Docker) without
+  editing the Spline scene — see session 1 notes.
+- <img> for the Hugging Face icon in about/page.tsx could become next/image.
+- public/assets/projects-screenshots/F1 Race Prediction/ is orphaned; delete it.

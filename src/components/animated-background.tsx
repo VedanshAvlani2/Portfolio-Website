@@ -1,5 +1,6 @@
 "use client";
 import React, { Suspense, useEffect, useRef, useState } from "react";
+import ErrorBoundary from "@/components/error-boundary";
 import { Application, SPEObject, SplineEvent } from "@splinetool/runtime";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -582,17 +583,27 @@ const AnimatedBackground = () => {
   };
   return (
     <>
-      <Suspense fallback={<div>Loading...</div>}>
-        <Spline
-          ref={splineContainer}
-          onLoad={(app: Application) => {
-            setSplineApp(app);
-            bypassLoading();
-          }}
-          // scene="/assets/skills-keyboard.spline"
-          scene="https://prod.spline.design/PdioGfcKL8eG-oDO/scene.splinecode"
-        />
-      </Suspense>
+      {/*
+        The Spline scene is fetched from a remote CDN and throws if that fetch
+        fails — common on slow or flaky mobile connections. Without this
+        boundary the throw propagates to the root and React unmounts the whole
+        page, leaving visitors a blank screen. Now the 3D background simply
+        does not appear and the rest of the site renders normally.
+        bypassLoading() is called on failure so the preloader never gets stuck.
+      */}
+      <ErrorBoundary onError={bypassLoading} fallback={null}>
+        <Suspense fallback={null}>
+          <Spline
+            ref={splineContainer}
+            onLoad={(app: Application) => {
+              setSplineApp(app);
+              bypassLoading();
+            }}
+            // scene="/assets/skills-keyboard.spline"
+            scene="https://prod.spline.design/PdioGfcKL8eG-oDO/scene.splinecode"
+          />
+        </Suspense>
+      </ErrorBoundary>
     </>
   );
 };

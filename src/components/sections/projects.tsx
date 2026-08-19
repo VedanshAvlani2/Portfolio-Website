@@ -17,7 +17,7 @@ import { cn } from "@/lib/utils";
 
 const ProjectsSection = () => {
   return (
-    <section id="projects" className="max-w-7xl mx-auto md:h-[130vh]">
+    <section id="projects" className="max-w-7xl mx-auto px-4 pb-32">
       <Link href={"#projects"}>
         <h2
           className={cn(
@@ -29,7 +29,7 @@ const ProjectsSection = () => {
           Projects
         </h2>
       </Link>
-      <div className="grid grid-cols-1 md:grid-cols-3">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-y-10 gap-x-6">
         {projects.map((project, index) => (
           <Modall key={project.src} project={project} />
         ))}
@@ -42,16 +42,14 @@ const Modall = ({ project }: { project: Project }) => {
     <div className="flex items-center justify-center">
       <Modal>
         <ModalTrigger className="bg-transparent flex justify-center group/modal-btn">
-          <div
-            className="relative w-[400px] max-w-full aspect-video rounded-lg overflow-hidden"
-            style={{ aspectRatio: "3/2" }}
-          >
+          <div className="relative w-[400px] max-w-full aspect-square rounded-lg overflow-hidden">
             <Image
               className="absolute w-full h-full top-0 left-0 object-cover hover:scale-[1.05] transition-all"
               src={project.src}
               alt={project.title}
-              width={300}
-              height={300}
+              width={800}
+              height={800}
+              sizes="(max-width: 640px) 100vw, 400px"
             />
             <div className="absolute w-full h-1/2 bottom-0 left-0 bg-gradient-to-t from-black via-black/85 to-transparent pointer-events-none">
               <div className="flex flex-col h-full items-start justify-end p-6">
