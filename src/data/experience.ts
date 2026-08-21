@@ -17,7 +17,7 @@ export const ROLES: Role[] = [
     title: "Graduate Teaching Assistant",
     org: "Naveen Jindal School of Management, UT Dallas",
     badge: "UT Dallas",
-    location: "Richardson, TX",
+    location: "Richardson, United States",
     start: "JAN 2026",
     end: "MAY 2026",
     current: true,

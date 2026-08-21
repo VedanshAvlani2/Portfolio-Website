@@ -24,11 +24,7 @@ const ExperienceSection = () => {
           Experience
         </h2>
       </Link>
-      <p className="mt-4 mb-20 text-center font-mono text-xs md:text-sm uppercase tracking-[0.14em] text-neutral-500">
-        2023 to 2026
-      </p>
-
-      <div className="mx-auto max-w-4xl">
+      <div className="mx-auto mt-20 max-w-4xl">
         {ROLES.map((role, i) => (
           <RoleRow key={role.id} role={role} isLast={i === ROLES.length - 1} />
         ))}
@@ -46,7 +42,10 @@ const RoleRow = ({ role, isLast }: { role: Role; isLast: boolean }) => {
         <p className="font-mono text-[10px] font-medium tracking-wider text-white md:text-xs">
           {role.start}
         </p>
-        <p className="mt-0.5 font-mono text-[10px] tracking-wider text-neutral-400 md:text-xs">
+        <p className="font-mono text-[9px] lowercase tracking-wider text-neutral-600 md:text-[10px]">
+          to
+        </p>
+        <p className="font-mono text-[10px] tracking-wider text-neutral-400 md:text-xs">
           {role.end}
         </p>
       </div>
