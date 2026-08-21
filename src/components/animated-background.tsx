@@ -70,7 +70,7 @@ const STATES = {
   experience: {
     desktop: {
       scale: { x: 0.28, y: 0.28, z: 0.28 },
-      position: { x: -420, y: -60, z: 0 },
+      position: { x: 0, y: -40, z: 0 },
       rotation: {
         x: Math.PI / 12,
         y: -Math.PI / 6,
@@ -79,7 +79,7 @@ const STATES = {
     },
     mobile: {
       scale: { x: 0.16, y: 0.16, z: 0.16 },
-      position: { x: 0, y: -140, z: 0 },
+      position: { x: 0, y: -40, z: 0 },
       rotation: {
         x: Math.PI / 12,
         y: -Math.PI / 6,

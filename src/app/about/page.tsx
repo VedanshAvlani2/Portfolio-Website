@@ -397,10 +397,15 @@ function Page() {
           >
             <h1 className="text-3xl mb-10 lg:md-20">About me</h1>
             <p className="mb-10 text-roboto">
-              Hey there! I&apos;m <strong>Vedansh Avlani</strong>, a Business Analytics and AI enthusiast passionate about creating 
-              data-driven digital experiences. 
-              With a strong foundation in analytics, machine learning, and full-stack development, I love turning complex 
-              problems into elegant, actionable solutions.
+              Hey there! I&apos;m <strong>Vedansh Avlani</strong>, an AI Engineer and Data
+              Analyst finishing an M.S. in Business Analytics and Artificial Intelligence
+              at UT Dallas. I build systems that turn messy information into decisions
+              someone can actually act on: OCR and LLM pipelines that cut manual data entry
+              by 40%, Power BI reporting behind 34% revenue growth, and agentic
+              architectures where models argue their way to a recommendation.
+              I like problems where the data is imperfect, the answer isn&apos;t obvious,
+              and the business impact is real. I&apos;m comfortable building the technical
+              solution and explaining what it means to the people who have to use it.
             </p>
             <p className="mb-10">
               When I&apos;m not coding, you&apos;ll find me exploring emerging AI technologies, analyzing Formula 1 race data, or enjoying a great cup of coffee while sketching my next project idea.

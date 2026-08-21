@@ -2,7 +2,7 @@
 import React from "react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
-import { ROLES, EDUCATION, Role } from "@/data/experience";
+import { ROLES, Role } from "@/data/experience";
 
 /**
  * Sits between Skills and Projects. Deliberately has NO background of its own:
@@ -34,23 +34,6 @@ const ExperienceSection = () => {
         ))}
       </div>
 
-      <div className="mx-auto mt-14 max-w-4xl border-t border-white/10 pt-9">
-        <p className="mb-5 font-mono text-xs uppercase tracking-[0.14em] text-neutral-600">
-          Education
-        </p>
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-          {EDUCATION.map((e) => (
-            <div
-              key={e.degree}
-              className="rounded-xl border border-white/10 bg-black/70 p-5 backdrop-blur-sm"
-            >
-              <p className="text-base font-semibold text-neutral-50">{e.degree}</p>
-              <p className="mt-1.5 text-sm text-neutral-400">{e.school}</p>
-              <p className="mt-2.5 font-mono text-xs text-neutral-500">{e.meta}</p>
-            </div>
-          ))}
-        </div>
-      </div>
     </section>
   );
 };
@@ -60,13 +43,12 @@ const RoleRow = ({ role, isLast }: { role: Role; isLast: boolean }) => {
     <div className="grid grid-cols-[76px_1px_minmax(0,1fr)] md:grid-cols-[168px_1px_minmax(0,1fr)]">
       {/* date rail */}
       <div className="pr-4 pt-1 text-right md:pr-7">
-        <p className="font-mono text-[10px] tracking-wider text-neutral-200 md:text-xs">
+        <p className="font-mono text-[10px] font-medium tracking-wider text-white md:text-xs">
           {role.start}
         </p>
-        <p className="mt-0.5 font-mono text-[10px] tracking-wider text-neutral-600 md:text-xs">
+        <p className="mt-0.5 font-mono text-[10px] tracking-wider text-neutral-400 md:text-xs">
           {role.end}
         </p>
-        <p className="mt-2 font-mono text-[10px] text-neutral-700">{role.duration}</p>
       </div>
 
       {/* spine */}
