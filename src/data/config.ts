@@ -1,5 +1,5 @@
 const config = {
-  // title: "Vedansh Avlani | Data Analyst & Product Manager",
+  // title: "Vedansh Avlani | AI Engineer & Data Analyst",
   title: "Vedansh Avlani",
   description: {
     long: "Explore the portfolio of Vedansh Avlani, an M.S. Business Analytics and Artificial Intelligence candidate at UT Dallas building agentic AI systems, machine learning pipelines, and data-driven products. From multi-agent LangGraph architectures and RAG-powered developer tools to macro-aware financial engines and LLM safety testing, see the work where rigorous modeling meets shipped software.",

@@ -363,7 +363,7 @@ function Page() {
               <div className="flex flex-col gap-3 lg:items-center ml-10 md:ml-20 lg:ml-0">
                 <p className="text-center text-xl">Vedansh Avlani</p>
                 <div className="text-xs bg-zinc-700 w-fit px-3 py-1 rounded-full">
-                  Data Analyst and Product Manager
+                  AI Engineer and Data Analyst
                 </div>
               </div>
             </div>
