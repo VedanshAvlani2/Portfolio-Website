@@ -73,7 +73,7 @@ const RoleRow = ({ role, isLast }: { role: Role; isLast: boolean }) => {
       {/* content: a card, so the keyboard reads through the gaps between roles
           rather than behind the body copy */}
       <div className={cn("pl-5 md:pl-8", isLast ? "pb-2" : "pb-8 md:pb-10")}>
-       <div className="rounded-xl border border-white/10 bg-black/70 p-5 backdrop-blur-sm md:p-7">
+       <div className="rounded-xl border border-white/10 bg-black/90 p-5 backdrop-blur-md md:p-7">
         <div className="flex flex-wrap items-baseline gap-x-3 gap-y-2">
           <h3 className="text-xl font-semibold tracking-tight text-neutral-50 md:text-2xl">
             {role.title}
@@ -82,7 +82,7 @@ const RoleRow = ({ role, isLast }: { role: Role; isLast: boolean }) => {
             {role.badge}
           </span>
         </div>
-        <p className="mt-2 mb-4 font-mono text-xs text-neutral-500">
+        <p className="mt-2 mb-4 font-mono text-sm text-neutral-400">
           {role.org} · {role.location}
         </p>
 
@@ -108,7 +108,7 @@ const RoleRow = ({ role, isLast }: { role: Role; isLast: boolean }) => {
             )}
           >
             {role.metrics.map((m) => (
-              <div key={m.label} className="bg-black/60 px-3.5 py-4">
+              <div key={m.label} className="bg-white/[0.04] px-3.5 py-4">
                 <p className="text-xl font-semibold tracking-tight text-neutral-50 md:text-2xl">
                   {m.value}
                 </p>
