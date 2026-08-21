@@ -67,6 +67,26 @@ const STATES = {
       },
     },
   },
+  experience: {
+    desktop: {
+      scale: { x: 0.28, y: 0.28, z: 0.28 },
+      position: { x: -420, y: -60, z: 0 },
+      rotation: {
+        x: Math.PI / 12,
+        y: -Math.PI / 6,
+        z: 0,
+      },
+    },
+    mobile: {
+      scale: { x: 0.16, y: 0.16, z: 0.16 },
+      position: { x: 0, y: -140, z: 0 },
+      rotation: {
+        x: Math.PI / 12,
+        y: -Math.PI / 6,
+        z: 0,
+      },
+    },
+  },
   projects: {
     desktop: {
       scale: { x: 0.3, y: 0.3, z: 0.3 },
@@ -109,7 +129,13 @@ const STATES = {
   },
 };
 
-type Section = "hero" | "about" | "skills" | "projects" | "contact";
+type Section =
+  | "hero"
+  | "about"
+  | "skills"
+  | "experience"
+  | "projects"
+  | "contact";
 
 const AnimatedBackground = () => {
 
@@ -434,6 +460,44 @@ const AnimatedBackground = () => {
     });
     gsap.timeline({
       scrollTrigger: {
+        trigger: "#experience",
+        start: "top 60%",
+        end: "bottom bottom",
+        scrub: true,
+        onEnter: () => {
+          setActiveSection("experience");
+          gsap.to(kbd.scale, {
+            ...keyboardStates("experience").scale,
+            duration: 1,
+          });
+          gsap.to(kbd.position, {
+            ...keyboardStates("experience").position,
+            duration: 1,
+          });
+          gsap.to(kbd.rotation, {
+            ...keyboardStates("experience").rotation,
+            duration: 1,
+          });
+        },
+        onLeaveBack: () => {
+          setActiveSection("skills");
+          gsap.to(kbd.scale, {
+            ...keyboardStates("skills").scale,
+            duration: 1,
+          });
+          gsap.to(kbd.position, {
+            ...keyboardStates("skills").position,
+            duration: 1,
+          });
+          gsap.to(kbd.rotation, {
+            ...keyboardStates("skills").rotation,
+            duration: 1,
+          });
+        },
+      },
+    });
+    gsap.timeline({
+      scrollTrigger: {
         trigger: "#projects",
         start: "top 70%",
         end: "bottom bottom",
@@ -455,9 +519,9 @@ const AnimatedBackground = () => {
           });
         },
         onLeaveBack: () => {
-          setActiveSection("skills");
+          setActiveSection("experience");
           gsap.to(kbd.scale, {
-            ...keyboardStates("skills").scale,
+            ...keyboardStates("experience").scale,
             duration: 1,
           });
           gsap.to(kbd.position, {
@@ -590,7 +654,7 @@ const AnimatedBackground = () => {
     <>
       {/*
         The Spline scene is fetched from a remote CDN and throws if that fetch
-        fails — common on slow or flaky mobile connections. Without this
+        fails (common on slow or flaky mobile connections). Without this
         boundary the throw propagates to the root and React unmounts the whole
         page, leaving visitors a blank screen. Now the 3D background simply
         does not appear and the rest of the site renders normally.
@@ -599,7 +663,7 @@ const AnimatedBackground = () => {
       {/*
         On mobile the skill label and description are drawn as 3D text INSIDE
         the Spline scene, which is scaled and repositioned for small viewports
-        (STATES[section].mobile) — so that panel ends up unreadable or
+        (STATES[section].mobile), so that panel ends up unreadable or
         off-screen and tapping a key appears to do nothing. This HTML overlay
         renders the same content in the DOM, where layout is predictable.
         Desktop keeps using the in-scene text via setVariable("desc", ...).

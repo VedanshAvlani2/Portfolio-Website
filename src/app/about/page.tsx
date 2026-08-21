@@ -223,7 +223,7 @@ const TOOLS = [
   },
   {
     name: "Arduino",
-    content: "Hardware prototyping made easy — code meets circuitry.",
+    content: "Hardware prototyping made easy: code meets circuitry.",
     icon: <SiArduino size={"50px"} color="#00979D" />,
     color: "#00979D",
   },

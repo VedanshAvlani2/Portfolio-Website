@@ -87,7 +87,7 @@ const PROJECTS = [
   },
   {
     id: 7,
-    name: "100K Trading Challenge — FinHack 2025",
+    name: "100K Trading Challenge: FinHack 2025",
     description: `A quantitative finance project comparing four ETF-based strategies to grow a $100K portfolio. Includes backtesting, performance metrics, and Monte Carlo simulations to find the most robust beginner-friendly strategy.`,
     link: "https://github.com/VedanshAvlani2/100K-Trading-Challenge---FinHack-2025",
     images: [

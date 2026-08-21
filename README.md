@@ -1,4 +1,4 @@
-# Vedansh Avlani — Portfolio
+# Vedansh Avlani, Portfolio
 
 An interactive 3D portfolio built with Next.js, showcasing my work across machine
 learning, analytics, and full-stack development.
@@ -7,13 +7,13 @@ learning, analytics, and full-stack development.
 
 ## Features
 
-- **Interactive 3D skills keyboard** — a Spline-built keyboard where each keycap is a
+- **Interactive 3D skills keyboard**: a Spline-built keyboard where each keycap is a
   tool I work with; hover to reveal what I use it for.
-- **Live presence** — Socket.IO powers real-time visitor cursors and an ambient chat,
+- **Live presence**: Socket.IO powers real-time visitor cursors and an ambient chat,
   so you can see who else is browsing.
-- **Motion-first UI** — GSAP and Framer Motion drive scroll, hover, and reveal
+- **Motion-first UI**: GSAP and Framer Motion drive scroll, hover, and reveal
   animations; Lenis handles smooth scrolling.
-- **Project deep-dives** — each project has its own page with a screenshot carousel,
+- **Project deep-dives**: each project has its own page with a screenshot carousel,
   feature breakdown, and the full tech stack.
 - **Fully responsive** and dark/light themed.
 
@@ -56,7 +56,7 @@ Open http://localhost:3000.
 
 ## Environment Variables
 
-See `.env.example`. Both are required for full functionality — the site still renders
+See `.env.example`. Both are required for full functionality. The site still renders
 without them, but the contact form and live presence features will be inactive.
 
 ## Project Structure
@@ -79,7 +79,7 @@ and add an entry to `src/data/projects.tsx`.
 
 ## Deployment
 
-Deployed on Vercel. The Socket.IO server (`server.js`) runs separately — Vercel's
+Deployed on Vercel. The Socket.IO server (`server.js`) runs separately, because Vercel's
 serverless functions can't hold persistent connections, so host it somewhere that
 supports long-lived processes (Railway, Render, Fly.io) and point `NEXT_PUBLIC_WS_URL`
 at it. Remember to add your production domain to the CORS allowlist in `server.js`.

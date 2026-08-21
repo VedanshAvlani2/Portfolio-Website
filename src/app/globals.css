@@ -74,7 +74,7 @@ body {
 }
 
 /* Hide the scrollbar chrome without disabling scrolling.
-   Wheel, trackpad, touch, keyboard and programmatic scrolling all still work —
+   Wheel, trackpad, touch, keyboard and programmatic scrolling all still work,
    only the visible bar is removed. */
 html {
   scrollbar-width: none;          /* Firefox */

@@ -423,7 +423,7 @@ const projects: Project[] = [
   {
     id: "f1-race-strategist",
     category: "Agentic AI / Machine Learning",
-    title: "F1 Race Strategist — AI Team General Manager",
+    title: "F1 Race Strategist: AI Team General Manager",
     src: "/assets/projects-screenshots/F1 Race Strategist/F1 Race Strategist Header.jpg",
     screenshots: ["F1 Race Strategist Header.jpg"],
     skills: {
@@ -451,7 +451,7 @@ const projects: Project[] = [
           </TypographyP>
           <TypographyP className="font-mono">
             A real-time Formula 1 strategy system in which a LangGraph multi-agent
-            pipeline — strategist, risk, skeptic, and synthesis — deliberates over
+            pipeline of strategist, risk, skeptic and synthesis agents deliberates over
             deterministic model outputs. The agents disagree visibly and then reconcile
             into a pit-stop recommendation with a confidence score, and every piece of
             LLM reasoning is strictly grounded in numbers the models actually computed
@@ -469,7 +469,7 @@ const projects: Project[] = [
               using leakage-free GroupKFold cross-validation
             </li>
             <li>
-              0.58s MAE on lap-time degradation versus a 0.80s baseline — a 28%
+              0.58s MAE on lap-time degradation versus a 0.80s baseline, a 28%
               improvement
             </li>
             <li>
@@ -505,7 +505,7 @@ const projects: Project[] = [
   {
     id: "devassist",
     category: "Agentic AI / Developer Tools",
-    title: "DevAssist — AI Coding Assistant",
+    title: "DevAssist: AI Coding Assistant",
     src: "/assets/projects-screenshots/DevAssist/DevAssist Header.jpg",
     screenshots: ["DevAssist Header.jpg"],
     skills: {
@@ -534,7 +534,7 @@ const projects: Project[] = [
             A self-hosted AI coding assistant that works against any GitHub repository.
             You describe a task in plain language and it plans the change, retrieves
             relevant context through RAG, generates code with a real unified diff, writes
-            pytest tests, runs them in a sandbox, and opens a pull request — with no human
+            pytest tests, runs them in a sandbox, and opens a pull request, with no human
             intervention until the approval step. Validated across retrylib, FastAPI, and
             custom repositories.
           </TypographyP>
@@ -554,7 +554,7 @@ const projects: Project[] = [
               end-to-end pipeline latency
             </li>
             <li>
-              RAG over ChromaDB with OpenAI text-embedding-3-small — repos chunked at
+              RAG over ChromaDB with OpenAI text-embedding-3-small: repos chunked at
               1,000 characters with 200-character overlap, top-5 retrieval per query, and
               fallback handling for retrieval misses
             </li>
@@ -589,7 +589,7 @@ const projects: Project[] = [
   {
     id: "velox",
     category: "FinTech / Full-Stack",
-    title: "Velox — Goldman Sachs Hackathon (3rd Place)",
+    title: "Velox: Goldman Sachs Hackathon (3rd Place)",
     src: "/assets/projects-screenshots/Velox/Velox Header.jpg",
     screenshots: ["Velox Header.jpg"],
     skills: {
@@ -615,7 +615,7 @@ const projects: Project[] = [
       return (
         <div>
           <TypographyP className="font-mono text-2xl text-center">
-            A macro-aware portfolio engine — 3rd place at the Goldman Sachs Hackathon
+            A macro-aware portfolio engine, 3rd place at the Goldman Sachs Hackathon
           </TypographyP>
           <TypographyP className="font-mono">
             A full-stack investment platform that classifies the market into Risk-On,
@@ -673,7 +673,7 @@ const projects: Project[] = [
   {
     id: "prism",
     category: "FinTech / Risk Intelligence",
-    title: "PRISM — DeFi Risk Intelligence (FinHack 2026)",
+    title: "PRISM: DeFi Risk Intelligence (FinHack 2026)",
     src: "/assets/projects-screenshots/PRISM/PRISM Header.jpg",
     screenshots: ["PRISM Header.jpg"],
     skills: {
@@ -704,7 +704,7 @@ const projects: Project[] = [
           <TypographyP className="font-mono">
             A DeFi risk intelligence platform that scores protocols 0–100 and outputs
             exactly one signal: ENTER, HOLD, REDUCE, or EXIT. PRISM measures TVL
-            <i> quality</i>, not TVL level — it tells a portfolio manager whether their
+            <i> quality</i>, not TVL level. It tells a portfolio manager whether their
             position is too large for a protocol&apos;s real exit liquidity under stress.
             Built for FinHack 2026 at UT Dallas.
           </TypographyP>
@@ -712,9 +712,9 @@ const projects: Project[] = [
           <TypographyH3 className="my-4 mt-8">Key Features</TypographyH3>
           <ul className="list-disc ml-6 font-mono">
             <li>
-              Six weighted risk pillars — liquidity resilience, liquidation cascade,
+              Six weighted risk pillars (liquidity resilience, liquidation cascade,
               governance capture, oracle reliability, supply pressure, and narrative
-              risk — recomputed every 15 minutes from live on-chain data
+              risk) recomputed every 15 minutes from live on-chain data
             </li>
             <li>
               Triple Convergence Alert: fires only when a narrative mention spike, a new
@@ -757,7 +757,7 @@ const projects: Project[] = [
   {
     id: "promptsentinel",
     category: "AI Safety & LLM Evaluation",
-    title: "PromptSentinel — Prompt Security Platform",
+    title: "PromptSentinel: Prompt Security Platform",
     src: "/assets/projects-screenshots/PromptSentinel/PromptSentinel Header.jpg",
     screenshots: ["PromptSentinel Header.jpg"],
     skills: {
@@ -783,7 +783,7 @@ const projects: Project[] = [
           <TypographyP className="font-mono">
             Your system prompt is an attack surface. A single crafted user message can
             override your instructions, extract your proprietary prompt, or jailbreak the
-            model — and most developers have no way to test for it before shipping.
+            model, and most developers have no way to test for it before shipping.
             PromptSentinel closes that gap: paste a system prompt, get a security score,
             see exactly how each attack would succeed, and download a hardened rewrite
             with safety rules injected.
@@ -792,7 +792,7 @@ const projects: Project[] = [
           <TypographyH3 className="my-4 mt-8">Key Features</TypographyH3>
           <ul className="list-disc ml-6 font-mono">
             <li>
-              Shield: a red-team audit across 10 attack vectors — prompt injection, role
+              Shield: a red-team audit across 10 attack vectors including prompt injection, role
               confusion, system prompt leak, DAN jailbreak, token boundary manipulation,
               indirect injection, multi-turn escalation, context overflow, instruction
               hierarchy attacks, and output format manipulation
@@ -803,7 +803,7 @@ const projects: Project[] = [
               Compliance risk ratings
             </li>
             <li>
-              Calibrated 0–100 security score — a bare prompt lands at 10–25, a fully
+              Calibrated 0-100 security score: a bare prompt lands at 10-25, a fully
               hardened one at 75–95
             </li>
             <li>
